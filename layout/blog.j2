@@ -1,0 +1,163 @@
+{% extends "standard.j2" %}
+
+{% if resource.name != "index.html" %}
+{% block headjs %}
+{{ super() }}
+<script type="text/javascript">
+  /* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */
+</script>
+{% endblock %}
+{% endif %}
+
+
+{% if resource.meta.created %}
+{% block endhead %}
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@seraf42"/>
+<meta name="twitter:image:src" content='{{site_url}}{{resource.meta.image}}'/>
+<meta name="twitter:title" content="{{resource.meta.title}}"/>
+<meta name="twitter:domain" content="julien.syx.fr"/>
+<meta name="twitter:description" content="{{
+                                          self.excerpt()|markdown|striptags
+                                          |truncate(200, end="…")|forceescape }}"/>
+{% endblock endhead %}
+{% endif %}
+
+{% block content %}
+  <div class="row-fluid">
+    <div class="span9">
+      {{ super() }}
+    </div>
+    <aside class="span3">
+      <div class="bio">
+        <div class="illustration">
+          <img src="/media/images/js.jpg" alt="Julien Syx">
+        </div>
+        <h2>Julien Syx</h2>
+        <div class="clear"></div>
+        <p>
+          <strong>Free Software
+            <a href="http://en.wikipedia.org/wiki/Hacker_(programmer_subculture)">hacker</a></strong>,
+          <strong>developer</strong> and consultant working
+          <strong><a href="/">freelance</a></strong>.
+        </p>
+
+        <p>
+          <em>Project Technical Leader</em> for
+          <strong><a href="http://launchpad.net/ceilometer">OpenStack
+              Ceilometer</a></strong>, member of the
+              <strong><a href="http://openstack.org">OpenStack</a> technical
+                committee</strong>, and <strong>developer</strong>.
+        </p>
+
+        <p>
+          Also a <strong><a href="http://debian.org">Debian</a>
+          developer</strong>, the author of the
+          <strong><a href="http://awesome.naquadah.org">awesome window
+          manager</a></strong> and a developer of <strong>GNU
+          Emacs</strong>.
+        </p>
+
+        <hr/>
+
+        <div id="social-logos">
+          <a href="/#contact">
+            <img src="/media/images/webicon-mail-m.png" alt="E-mail">
+          </a>
+          <a href="/blog/index.xml">
+            <img src="/media/images/webicon-rss-m.png" alt="RSS feed">
+          </a>
+          <a href="https://github.com/Seraf" title="Julien Syx on GitHub">
+            <img src="/media/images/webicon-github-m.png" alt="GitHub logo"/>
+          </a>
+          <a href="http://twitter.com/seraf42" title="seraf42 on Twitter">
+            <img src="/media/images/webicon-twitter-m.png" alt="Twitter logo"/>
+          </a>
+          <a href="http://plus.google.com/102534272685118877802?prsrc=3" title="Julien Syx on Google+">
+            <img src="/media/images/webicon-googleplus-m.png" alt="Google+ logo"/>
+          </a>
+          <a href="http://www.linkedin.com/in/juliensyx" title="juliensyx on LinkedIn">
+            <img src="/media/images/webicon-linkedin-m.png" alt="LinkedIn logo"/>
+          </a>
+        </div>
+
+        <a class="twitter-timeline" href="https://twitter.com/seraf42" data-widget-id="268005727774318593">Tweets by @seraf42</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      </div>
+    </aside>
+  {% endblock %}
+
+{% block premain %}
+{% mark article -%}
+{% filter markdown %}
+{% block main %}{% endblock %}
+{% endfilter %}
+{% endmark %}
+{% endblock %}
+
+{% block postarticle %}
+{% if resource.name != "index.html" %}
+  <div class="panel panel-default" id="blog-footer">
+    <div class="panel-heading">Enjoyed this article?</div>
+    <div class="row-fluid panel-body">
+      <div class="col-lg-7">
+        <h5>Share it:</h5>
+        <div class="social">
+          <a class="FlattrButton" style="display:none;" href="{{site_url}}{{resource.full_url}}"
+             title="{{resource.meta.title}}"
+             rev="flattr;button:compact;uid:Seraf42"></a>
+             <a class="socialite twitter-share" href="http://twitter.com/share" data-text="{{resource.meta.title}}" data-via="Seraf42" data-count="horizontal" data-url="{{site_url}}{{resource.full_url}}" rel="nofollow" target="_blank">Share on Twitter</a>
+             <a class="socialite googleplus-one" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{site_url}}{{resource.full_url}}" rel="nofollow" target="_blank" data-size="medium" data-url="{{site_url}}{{resource.full_url}}">Share on Google+</a>
+             <a class="socialite linkedin-share" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{site_url}}{resource.full_url}}&amp;title={{resource.meta.title}}" data-counter="horizontal" data-url="{{site_url}}{{resource.full_url}}" rel="nofollow" target="_blank">Share on LinkedIn</a>
+             <a class="socialite facebook-like" href="http://www.facebook.com/sharer.php?u={{site_url}}{{resource.full_url}}&amp;t={{resource.meta.title}}" data-action="recommend" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank">Share on Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if resource.meta.created %}
+{% if resource.next_by_time or resource.prev_by_time%}
+<nav>
+  <ul class="pager">
+{% endif %}
+<div class="row-fluid">
+  {% if resource.next_by_time %}
+    <div class="span6">
+      <li class="previous">
+        <a rel="prev" href="{{ resource.next_by_time.full_url }}">
+          <span class="glyphicon glyphicon-arrow-left"></span>
+          <strong>Previous post:</strong>
+          {{resource.next_by_time.meta.title}}
+        </a>
+      </li>
+    </div>
+  {% endif %}
+  {% if resource.prev_by_time %}
+    <div class="span6">
+      <li class="next">
+        <a rel="next" href="{{ resource.prev_by_time.full_url }}">
+          <strong>Next post:</strong>
+          {{resource.prev_by_time.meta.title}}
+          <span class="glyphicon glyphicon-arrow-right"></span>
+        </a>
+      </li>
+    </div>
+  {% endif %}
+  {% if resource.next_by_time or resource.prev_by_time%}
+</div>
+  </ul>
+</nav>
+{% endif %}
+{% endif %}
+
+{% endblock postarticle %}

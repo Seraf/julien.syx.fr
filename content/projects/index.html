@@ -1,0 +1,41 @@
+---
+title: "Projects"
+---
+<div class="well">
+  <p class="lead">
+    Here is a list of Free Software (or related) projects I maintain or contribute to. I only list the projects for which I made a significant contribution, or the ones where I'm one of the author or developer.
+  </p>
+  <p>
+    There's also a lot of small contributions I did all over the years.
+  </p>
+</div>
+
+{% macro render_software(name, url, logo, text) %}
+<div class="span4 listing-entry">
+  <h2>
+    <a href="{{ url }}">
+      {% if logo %}
+      <img class="listing-logo" src="{{logo}}">
+      {% else %}
+      {{name}}
+      {% endif %}
+    </a>
+  </h2>
+  <div class="caption">
+    {% if logo %}
+    <h4><a href="{{ url }}">{{name}}</a></h4>
+    {% endif %}
+    <p>
+      {{ text|typogrify }}
+    </p>
+  </div>
+</div>
+{% endmacro %}
+
+
+<div class="row-fluid">
+  {{ render_software("L.I.S.A",
+  "http://www.lisa-project.net",
+  "/media/images/projects/lisa.png",
+  "L.I.S.A is a project to bring an AI to the habitat") }}
+</div>
