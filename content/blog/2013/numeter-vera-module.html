@@ -1,0 +1,72 @@
+---
+title: Vera Numeter Module
+created: !!timestamp '2013-11-11 11:37:09'
+image: /media/images/projects/numeter.png
+tags:
+    - Numeter
+    - Monitoring
+    - Graphs
+    - Home Automation
+---
+
+{% block excerpt %}
+{% mark excerpt %}
+
+I just released a plugin for Numeter to add graph feature to the Vera Box !
+{% endmark %}
+{% endblock %}
+
+For those who don't already know <a href="http://www.numeter.com">Numeter</a>, it's a new graph tool made by <a href="https://github.com/gaelL">Gaël Lambert</a> at <a href="http://www.enovance.com">eNovance</a>.<br/>
+<i>Numeter is a new and dynamic graphing solution made by some of the folks at eNovance. We use it as part of our cloud solutions. It is based on Python, sexy and highly scalable.</i>
+<br/>
+I will not explain how to install <a href="http://www.numeter.com">Numeter</a> here, but how to setup the Vera module for this tool.<br/>
+<br/>
+First, you need to install the Vera module :
+{% syntax bash %}
+git clone https://github.com/Seraf/numeter-vera-module/
+cd numeter-vera-module
+python setup.py install
+# Don't forget to install the python requests package :
+pip install requests
+{% endsyntax %}
+<br/>
+Then you can edit the numeter_poller config file :
+{% syntax bash %}
+vim /etc/numeter/numeter_poller.cfg
+{% endsyntax %}
+<br/>
+Add the module to the poller's module list :
+
+{% syntax ini %}
+modules = numeter.poller.muninModule:MuninModule|veraModule:VeraModule
+{% endsyntax %}
+<br/>
+And add the Vera configuration block at the end of the file :
+
+{% syntax ini %}
+[VeraModule]
+address: 192.168.1.XX:3480
+devices: [{'id':5, 'variables':['CurrentTemperature','CurrentSetpoint']},{'id':'8', 'variables':['CurrentLevel']},{'id':'9','variables':['CurrentLevel']},{'id':'7','variables':['CurrentTemperature']}]
+{% endsyntax %}
+<br/>
+You have to change the IP of the Vera. I should be able to detect this IP automatically with a request on the Vera webservice, but as it can fail, it's better to get the value directly in the config file.
+<br/>
+In the devices value, you have to provide a Python list. The format is : <pre>[<device>,<device>,<device><device>]</pre><br/>
+In each device, you will have the id, and variables to graph in a list. To know the values, you can go in the advanced option tab of your device:<br/>
+Here is the id of the device :<br/>
+<img src="/media/images/blog/2013/11/11/device-id.png" alt="id-device" />
+Here is the name of the variable and its value :
+<img src="/media/images/blog/2013/11/11/temperature.png" alt="temperature-device" />
+<br/>
+<br/>
+After restarting the poller, you should get something like this:
+<img src="/media/images/blog/2013/11/11/graph.png" alt="graph" />
+
+If you wonder why the temperature was at 12°C, it's because I'm currently working in my Veranda, and the heating is actually off.
+I powered on the heating this morning at 10:00AM and Numeter graphed me the temperature !<br/>
+
+You can now track all value you want ! I plan to add a sort by rooms in the Numeter interface, I need to discuss it with Gaël.
+
+{# Local Variables: #}
+{# mode: markdown #}
+{# End: #}
