@@ -1,0 +1,109 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props {
+  company: string;
+  role: string;
+  period: string;
+  location?: string;
+  description: string;
+  highlights: string[];
+}
+
+const { company, role, period, location, description, highlights } = Astro.props;
+---
+
+<div class="experience-card card fade-in">
+  <div class="experience-header">
+    <div>
+      <h3 class="experience-company">{company}</h3>
+      <p class="experience-role">{role}</p>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-period">{period}</span>
+      {location && <span class="experience-location">{location}</span>}
+    </div>
+  </div>
+  <p class="experience-description">{description}</p>
+  {highlights.length > 0 && (
+    <ul class="experience-highlights">
+      {highlights.map(h => <li>{h}</li>)}
+    </ul>
+  )}
+</div>
+
+<style>
+  .experience-card {
+    padding: var(--space-xl);
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .experience-company {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .experience-role {
+    color: var(--color-primary);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .experience-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .experience-period {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .experience-location {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  .experience-description {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .experience-highlights {
+    margin-top: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .experience-highlights li {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1.5;
+  }
+
+  .experience-highlights li::marker {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .experience-header {
+      flex-direction: column;
+    }
+
+    .experience-meta {
+      text-align: left;
+    }
+  }
+</style>

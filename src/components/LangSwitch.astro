@@ -1,0 +1,47 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const targetLang = lang === 'fr' ? 'en' : 'fr';
+const targetPath = getLocalizedPath(Astro.url.pathname, targetLang);
+---
+
+<a href={targetPath} class="lang-switch" aria-label={t('lang.switch')}>
+  <span class="lang-current">{t('lang.current')}</span>
+  <span class="lang-separator">/</span>
+  <span class="lang-target">{targetLang.toUpperCase()}</span>
+</a>
+
+<style>
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all var(--transition);
+  }
+
+  .lang-switch:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .lang-current {
+    color: var(--color-primary);
+  }
+
+  .lang-separator {
+    color: var(--color-text-light);
+  }
+
+  .lang-target {
+    color: var(--color-text-muted);
+  }
+</style>

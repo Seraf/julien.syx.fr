@@ -1,0 +1,81 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface Props {
+  name: string;
+  url: string;
+  description: string;
+  tech: string[];
+}
+
+const { name, url, description, tech } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener" class="project-card card fade-in">
+  <h3 class="project-name">{name}</h3>
+  <p class="project-description">{description}</p>
+  <div class="project-footer">
+    <div class="project-tech">
+      {tech.map(t => <span class="tag">{t}</span>)}
+    </div>
+    <span class="project-link">
+      {t('projects.visit')}
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </span>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-name {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .project-description {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  .project-card:hover .project-link {
+    text-decoration: underline;
+  }
+</style>

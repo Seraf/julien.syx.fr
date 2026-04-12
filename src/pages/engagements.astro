@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import EngagementCard from '../components/EngagementCard.astro';
+import { useTranslations } from '../i18n';
+import { engagements } from '../data/engagements';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const climateEngagements = engagements.filter(e => e.category === 'climate');
+const sportEngagements = engagements.filter(e => e.category === 'sport');
+---
+
+<BaseLayout title="Engagements - Julien Syx">
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.engagements')} subtitle={t('section.engagements.subtitle')} />
+
+      <h3 class="category-title fade-in">{t('engagements.climate')}</h3>
+      <div class="engagements-list">
+        {climateEngagements.map(eng => (
+          <EngagementCard
+            title={eng.title[lang]}
+            organization={eng.organization}
+            period={eng.period}
+            description={eng.description[lang]}
+            category={eng.category}
+          />
+        ))}
+      </div>
+
+      <h3 class="category-title fade-in">{t('engagements.sport')}</h3>
+      <div class="engagements-list">
+        {sportEngagements.map(eng => (
+          <EngagementCard
+            title={eng.title[lang]}
+            organization={eng.organization}
+            period={eng.period}
+            description={eng.description[lang]}
+            category={eng.category}
+          />
+        ))}
+      </div>
+
+      <div class="back-link">
+        <a href="/" class="btn btn-outline">{t('misc.backHome')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .category-title {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    margin-top: var(--space-2xl);
+  }
+
+  .category-title:first-of-type {
+    margin-top: 0;
+  }
+
+  .engagements-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .back-link {
+    text-align: center;
+    margin-top: var(--space-3xl);
+  }
+</style>

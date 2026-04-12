@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  organization?: string;
+  period: string;
+  description: string;
+  category: string;
+}
+
+const { title, organization, period, description, category } = Astro.props;
+
+const categoryIcons: Record<string, string> = {
+  climate: '\uD83C\uDF0D',
+  sport: '\uD83E\uDD4B',
+  teaching: '\uD83D\uDCDA',
+  opensource: '\uD83D\uDD27',
+};
+---
+
+<div class="engagement-card card fade-in">
+  <span class="engagement-icon">{categoryIcons[category] || '\u2B50'}</span>
+  <div class="engagement-content">
+    <div class="engagement-header">
+      <h3 class="engagement-title">{title}</h3>
+      <span class="engagement-period">{period}</span>
+    </div>
+    {organization && <p class="engagement-org">{organization}</p>}
+    <p class="engagement-description">{description}</p>
+  </div>
+</div>
+
+<style>
+  .engagement-card {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .engagement-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .engagement-content {
+    flex: 1;
+  }
+
+  .engagement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xs);
+  }
+
+  .engagement-title {
+    font-size: 1.05rem;
+  }
+
+  .engagement-period {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .engagement-org {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+  }
+
+  .engagement-description {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+</style>

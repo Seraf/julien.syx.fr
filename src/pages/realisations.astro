@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { useTranslations } from '../i18n';
+import { projects } from '../data/projects';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title="Realisations - Julien Syx">
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.realisations')} subtitle={t('section.realisations.subtitle')} />
+      <div class="grid-2">
+        {projects.map(project => (
+          <ProjectCard
+            name={project.name}
+            url={project.url}
+            description={project.description[lang]}
+            tech={project.tech}
+          />
+        ))}
+      </div>
+      <div class="back-link">
+        <a href="/" class="btn btn-outline">{t('misc.backHome')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .back-link {
+    text-align: center;
+    margin-top: var(--space-3xl);
+  }
+</style>

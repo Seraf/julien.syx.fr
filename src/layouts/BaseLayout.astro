@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { title = 'Julien Syx - CTO / Product Lead', description = '' } = Astro.props;
+const defaultDescription = lang === 'fr'
+  ? 'Julien Syx - CTO / Product Lead chez Cycloid. Plus de 15 ans d\'expérience en Cloud, DevOps et leadership technique.'
+  : 'Julien Syx - CTO / Product Lead at Cycloid. Over 15 years of experience in Cloud, DevOps and technical leadership.';
+const metaDescription = description || defaultDescription;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={lang} data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content="Julien Syx" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={new URL('/photo-julien.jpg', Astro.site).href} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fr" href={new URL(Astro.url.pathname.replace(/^\/en/, '') || '/', Astro.site).href} />
+    <link rel="alternate" hreflang="en" href={new URL(`/en${Astro.url.pathname.replace(/^\/en/, '') || '/'}`, Astro.site).href} />
+
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+
+    <!-- Theme script (inline, runs before paint) -->
+    <script is:inline>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', stored || preferred);
+      })();
+    </script>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Julien Syx",
+      "jobTitle": "CTO / Product Lead",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Cycloid",
+        "url": "https://www.cycloid.io"
+      },
+      "url": "https://julien.syx.fr",
+      "sameAs": [
+        "https://www.linkedin.com/in/juliensyx",
+        "https://github.com/Seraf"
+      ]
+    })} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{lang === 'fr' ? 'Aller au contenu' : 'Skip to content'}</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Scroll fade-in observer -->
+    <script is:inline>
+      (function() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      })();
+    </script>
+  </body>
+</html>

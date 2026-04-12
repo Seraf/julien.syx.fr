@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+import { useTranslations } from '../i18n';
+import { parcoursSteps } from '../data/parcours';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title="Parcours - Julien Syx">
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.parcours')} subtitle={t('section.parcours.subtitle')} />
+      <p class="parcours-intro fade-in">{t('parcours.intro')}</p>
+      <div class="timeline">
+        {parcoursSteps.map(step => (
+          <TimelineItem
+            title={t(`parcours.${step.key}.title` as any)}
+            period={t(`parcours.${step.key}.period` as any)}
+            text={t(`parcours.${step.key}.text` as any)}
+          />
+        ))}
+      </div>
+      <div class="back-link">
+        <a href="/" class="btn btn-outline">{t('misc.backHome')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .parcours-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto var(--space-3xl);
+    line-height: 1.7;
+  }
+
+  .timeline {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    text-align: center;
+    margin-top: var(--space-3xl);
+  }
+</style>

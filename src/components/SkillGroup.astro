@@ -1,0 +1,35 @@
+---
+interface Props {
+  category: string;
+  skills: string[];
+}
+
+const { category, skills } = Astro.props;
+---
+
+<div class="skill-group fade-in">
+  <h3 class="skill-category">{category}</h3>
+  <div class="skill-tags">
+    {skills.map(skill => (
+      <span class="tag">{skill}</span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .skill-group {
+    margin-bottom: var(--space-xl);
+  }
+
+  .skill-category {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+</style>

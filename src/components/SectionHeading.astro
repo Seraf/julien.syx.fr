@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  id?: string;
+}
+
+const { title, subtitle, id } = Astro.props;
+---
+
+<div class="section-heading fade-in" id={id}>
+  <h2>{title}</h2>
+  {subtitle && <p class="section-subtitle">{subtitle}</p>}
+</div>
+
+<style>
+  .section-heading {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-heading h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-top: var(--space-md);
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ExperienceCard from '../../components/ExperienceCard.astro';
+import SkillGroup from '../../components/SkillGroup.astro';
+import { useTranslations } from '../../i18n';
+import { experiences, education } from '../../data/experience';
+import { skillGroups } from '../../data/skills';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<BaseLayout title="Experience - Julien Syx">
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.experience')} subtitle={t('section.experience.subtitle')} />
+      <div class="experience-list">
+        {experiences.map(exp => (
+          <ExperienceCard
+            company={exp.company}
+            role={exp.role[lang]}
+            period={exp.period}
+            location={exp.location}
+            description={exp.description[lang]}
+            highlights={exp.highlights[lang]}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.education')} />
+      <div class="education-list">
+        {education.map(edu => (
+          <div class="education-item card fade-in">
+            <h3>{edu.school}</h3>
+            <p class="education-degree">{edu.degree[lang]}</p>
+            <span class="education-period">{edu.period}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading title={t('section.skills')} subtitle={t('section.skills.subtitle')} />
+      <div class="skills-grid">
+        {skillGroups.map(group => (
+          <SkillGroup category={group.category[lang]} skills={group.skills} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="container back-link">
+    <a href="/en/" class="btn btn-outline">{t('misc.backHome')}</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .experience-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+  .education-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); }
+  .education-item h3 { font-size: 1.1rem; margin-bottom: var(--space-xs); }
+  .education-degree { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: var(--space-sm); }
+  .education-period { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); }
+  .back-link { text-align: center; padding: var(--space-3xl) 0; }
+</style>
