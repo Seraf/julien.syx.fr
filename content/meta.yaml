@@ -1,5 +1,0 @@
-extends: standard.j2
-default_block: main
-author: Julien Syx
-charset: UTF-8
-icon: wrench
