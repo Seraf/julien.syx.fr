@@ -25,12 +25,16 @@ export const experiences: Experience[] = [
         'Stratégie produit et roadmap en collaboration avec les équipes',
         'Full remote à travers l\'Europe, anglais comme langue de travail',
         'Recrutement et structuration de l\'équipe engineering',
+        'Early adopter de l\'IA : pilotage de la réécriture complète du projet via l\'IA',
+        'Mise en place de l\'IA (Cursor, Claude) au sein de l\'équipe, avec une connaissance approfondie des bonnes pratiques',
       ],
       en: [
         'Built and managed the engineering team (15 people)',
         'Product strategy and roadmap in collaboration with teams',
         'Fully remote across Europe, English as working language',
         'Recruiting and structuring the engineering team',
+        'Early AI adopter: leading the full rewrite of the product with AI',
+        'Rolled out AI tooling (Cursor, Claude) across the team, with deep knowledge of best practices',
       ],
     },
   },
@@ -65,24 +69,13 @@ export const experiences: Experience[] = [
       fr: [
         'Écosystème OpenStack et cloud computing',
         'Pratiques DevOps avancées',
+        'Gestion des sites internet de Warner Bros',
       ],
       en: [
         'OpenStack ecosystem and cloud computing',
         'Advanced DevOps practices',
+        'Managed Warner Bros websites',
       ],
-    },
-  },
-  {
-    company: 'BSO Network Solutions',
-    role: { fr: 'Ingénieur Système N2', en: 'System Engineer - Level 2' },
-    period: '2012',
-    description: {
-      fr: 'Administration système et gestion d\'infrastructure. Gestion des sites internet de Warner Bros.',
-      en: 'System administration and infrastructure management. Managed Warner Bros websites.',
-    },
-    highlights: {
-      fr: ['Gestion des sites internet de Warner Bros'],
-      en: ['Managed Warner Bros websites'],
     },
   },
   {

@@ -61,12 +61,12 @@ export const engagements: Engagement[] = [
   },
   {
     category: 'sport',
-    title: { fr: 'Ceinture noire & Assistant Club de Taekwondo', en: 'Black Belt & Taekwondo Club Assistant' },
+    title: { fr: 'Secrétaire, Assistant Club & Ceinture noire de Taekwondo', en: 'Secretary, Club Assistant & Taekwondo Black Belt' },
     organization: 'Sénart Taekwondo Hapkido',
     period: '2021 - ...',
     description: {
-      fr: 'Ceinture noire et diplôme d\'assistant club. Secrétaire de l\'association (~250 membres). J\'assiste le professeur et donne des cours ponctuellement. Diplôme d\'instructeur fédéral prévu en 2027.',
-      en: 'Black belt and club assistant certification. Club secretary (~250 members). I assist the instructor and occasionally lead classes. Federal instructor certification planned for 2027.',
+      fr: 'Secrétaire de l\'association (~250 adhérents), en charge de toute la communication du club. Ceinture noire et diplôme d\'assistant club : j\'assiste le professeur et donne des cours ponctuellement. Diplôme d\'instructeur fédéral prévu en 2027.',
+      en: 'Club secretary (~250 members), in charge of all club communications. Black belt and club assistant certification: I assist the instructor and occasionally lead classes. Federal instructor certification planned for 2027.',
     },
   },
 ];

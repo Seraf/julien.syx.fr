@@ -10,6 +10,7 @@ const t = useTranslations(lang);
 
 const keyEngagements = engagements.filter(e =>
   e.title.fr.includes('Fresque du Climat') ||
+  e.title.fr.includes('2tonnes') ||
   e.title.fr.includes('Taekwondo') ||
   e.title.fr.includes('Boavizta')
 );
@@ -61,9 +62,9 @@ const keyEngagements = engagements.filter(e =>
     <div>
       <h2 class="cv-section-title">{t('cv.languages')}</h2>
       <div class="cv-sidebar-group">
-        <div class="cv-sidebar-item"><strong>Français</strong> — Natif</div>
-        <div class="cv-sidebar-item"><strong>Anglais</strong> — Professionnel</div>
-        <div class="cv-sidebar-item"><strong>Japonais</strong> — A2</div>
+        <div class="cv-sidebar-item"><strong>Français</strong> (natif)</div>
+        <div class="cv-sidebar-item"><strong>Anglais</strong> (professionnel)</div>
+        <div class="cv-sidebar-item"><strong>Japonais</strong> (A2)</div>
       </div>
     </div>
 
@@ -134,7 +135,7 @@ const keyEngagements = engagements.filter(e =>
       <h2 class="cv-section-title">{t('cv.engagements')}</h2>
       {keyEngagements.map(eng => (
         <div class="cv-engagement-item">
-          <strong>{eng.title[lang]}</strong> — {eng.organization} ({eng.period})
+          <strong>{eng.title[lang]}</strong>, {eng.organization} ({eng.period})
         </div>
       ))}
     </section>
