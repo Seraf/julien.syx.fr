@@ -10,6 +10,7 @@ const t = useTranslations(lang);
 
 const keyEngagements = engagements.filter(e =>
   e.title.en.includes('Climate Fresk') ||
+  e.title.en.includes('2 Tonnes') ||
   e.title.en.includes('Taekwondo') ||
   e.title.en.includes('Boavizta')
 );
@@ -61,19 +62,32 @@ const keyEngagements = engagements.filter(e =>
     <div>
       <h2 class="cv-section-title">{t('cv.languages')}</h2>
       <div class="cv-sidebar-group">
-        <div class="cv-sidebar-item"><strong>French</strong> — Native</div>
-        <div class="cv-sidebar-item"><strong>English</strong> — Professional</div>
-        <div class="cv-sidebar-item"><strong>Japanese</strong> — A2</div>
+        <div class="cv-sidebar-item"><strong>French</strong> (native)</div>
+        <div class="cv-sidebar-item"><strong>English</strong> (professional)</div>
+        <div class="cv-sidebar-item"><strong>Japanese</strong> (A2)</div>
       </div>
     </div>
 
     <div>
       <h2 class="cv-section-title">{t('cv.certifications')}</h2>
       <div class="cv-sidebar-group">
+        <div class="cv-sidebar-item">AWS Certified Solutions Architect – Associate</div>
+        <div class="cv-sidebar-item">AWS Certified SysOps Administrator – Associate</div>
         <div class="cv-sidebar-item">Club Assistant Certificate (Taekwondo)</div>
         <div class="cv-sidebar-item">Taekwondo Black Belt</div>
         <div class="cv-sidebar-item">Climate Fresk Facilitator</div>
         <div class="cv-sidebar-item">Digital Fresk Facilitator</div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="cv-section-title">{t('cv.hobbies')}</h2>
+      <div class="cv-skill-tags">
+        <span class="cv-skill-tag">Taekwondo</span>
+        <a class="cv-skill-tag" href="https://www.yahoki.fr">Hiking (yahoki.fr)</a>
+        <span class="cv-skill-tag">Tabletop RPGs</span>
+        <span class="cv-skill-tag">Astronomy</span>
+        <span class="cv-skill-tag">Japanese culture</span>
       </div>
     </div>
   </aside>
@@ -121,7 +135,7 @@ const keyEngagements = engagements.filter(e =>
       <h2 class="cv-section-title">{t('cv.engagements')}</h2>
       {keyEngagements.map(eng => (
         <div class="cv-engagement-item">
-          <strong>{eng.title[lang]}</strong> — {eng.organization} ({eng.period})
+          <strong>{eng.title[lang]}</strong>, {eng.organization} ({eng.period})
         </div>
       ))}
     </section>

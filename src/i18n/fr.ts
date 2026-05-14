@@ -2,8 +2,8 @@ export default {
   // Nav
   'nav.home': 'Accueil',
   'nav.parcours': 'Parcours',
-  'nav.experience': 'Experience',
-  'nav.realisations': 'Realisations',
+  'nav.experience': 'Expérience',
+  'nav.realisations': 'Réalisations',
   'nav.engagements': 'Engagements',
   'nav.contact': 'Contact',
 
@@ -12,7 +12,7 @@ export default {
   'hero.name': 'Julien Syx',
   'hero.title': 'CTO / Product Lead',
   'hero.subtitle': 'Cycloid',
-  'hero.description': 'Passionné d\'informatique depuis l\'âge de 8 ans, premier salarié et associé de Cycloid depuis 2015. Je porte la stratégie produit et dirige une équipe de 15 personnes en full remote à travers l\'Europe.',
+  'hero.description': 'Passionné d\'informatique depuis l\'enfance, CTO de Cycloid depuis sa création en 2015. Je porte la stratégie produit et dirige une équipe de 15 personnes en full remote à travers l\'Europe.',
   'hero.cta.parcours': 'Découvrir mon parcours',
   'hero.cta.contact': 'Me contacter',
 
@@ -36,7 +36,7 @@ export default {
 
   'parcours.epitech.title': 'EPITECH - Apprendre à apprendre',
   'parcours.epitech.period': '2005 - 2010',
-  'parcours.epitech.text': 'Passionné d\'informatique depuis l\'âge de 8 ans, le choix d\'EPITECH était une évidence après un Bac Scientifique option Sciences de l\'Ingénieur. Une école dont la philosophie repose sur un principe simple : apprendre à apprendre. L\'informatique évolue trop vite pour se reposer sur ses acquis.',
+  'parcours.epitech.text': 'Passionné d\'informatique depuis l\'enfance, le choix d\'EPITECH était une évidence après un Bac Scientifique option Sciences de l\'Ingénieur. Une école dont la philosophie repose sur un principe simple : apprendre à apprendre. L\'informatique évolue trop vite pour se reposer sur ses acquis.',
 
   'parcours.alternance.title': 'L\'alternance et le monde professionnel',
   'parcours.alternance.period': '2007 - 2010',
@@ -52,11 +52,11 @@ export default {
 
   'parcours.redhat.title': 'Red Hat - L\'échelle mondiale',
   'parcours.redhat.period': '2014 - 2015',
-  'parcours.redhat.text': 'En 2014, eNovance a été rachetée par Red Hat. L\'expérience de la grande entreprise américaine et de l\'open source à l\'échelle mondiale. Leur façon de travailler ne me convenait pas.',
+  'parcours.redhat.text': 'En 2014, eNovance a été rachetée par Red Hat. L\'expérience de la grande entreprise américaine et de l\'open source à l\'échelle mondiale. Cela ne me convenait pas : je préfère les entreprises à taille humaine, qui favorisent l\'autonomie et la liberté d\'entreprendre, à la hiérarchie d\'une entreprise tentaculaire.',
 
   'parcours.cycloid.title': 'Cycloid - Construire un produit',
   'parcours.cycloid.period': '2015 - Aujourd\'hui',
-  'parcours.cycloid.text': 'En 2015, j\'ai rejoint Cycloid comme premier salarié et associé. En tant que CTO, j\'ai construit l\'équipe technique et porté la stratégie produit. L\'entreprise a fait le choix du full remote dès le départ, en recrutant à travers l\'Europe avec l\'anglais comme langue de travail. Aujourd\'hui, je gère une équipe de 15 personnes. En 2019, une levée de fonds de plus de 3 millions d\'euros. En 2025, une deuxième levée du même montant.',
+  'parcours.cycloid.text': 'En 2015, j\'ai rejoint Cycloid dès sa création comme CTO. J\'ai construit l\'équipe technique et porté la stratégie produit. L\'entreprise a fait le choix du full remote dès le départ, en recrutant à travers l\'Europe avec l\'anglais comme langue de travail. Aujourd\'hui, je gère une équipe de 15 personnes. En 2019, une levée de fonds de plus de 3 millions d\'euros. En 2025, une deuxième levée du même montant.',
 
   'parcours.covid.title': 'Le Covid - Un déclic',
   'parcours.covid.period': '2020',
@@ -64,7 +64,7 @@ export default {
 
   'parcours.sport.title': 'Le retour au sport et la transmission',
   'parcours.sport.period': '2021 - Aujourd\'hui',
-  'parcours.sport.text': 'À la sortie du Covid, retour au sport avec le taekwondo. Depuis : ceinture noire, 25 kg perdus, diplôme d\'assistant club, et investissement comme secrétaire de l\'association (~250 membres). J\'assiste le professeur et donne des cours ponctuellement. C\'est au sein de ce club que j\'ai découvert l\'amour du partage et de la transmission.',
+  'parcours.sport.text': 'À la sortie du Covid, retour au sport avec le taekwondo. Depuis : ceinture noire, 25 kg perdus, diplôme d\'assistant club, et investissement comme secrétaire de l\'association (~250 membres). J\'assiste le professeur et donne des cours ponctuellement. C\'est au sein de ce club que j\'ai découvert l\'amour du partage et de la transmission, mais aussi le corps humain, ses muscles, ses articulations, et son pouvoir de guérir grâce au mouvement.',
 
   'parcours.apprendre.title': 'La soif d\'apprendre, toujours',
   'parcours.apprendre.period': 'Toujours',
@@ -106,13 +106,14 @@ export default {
 
   // CV
   'cv.profile': 'Profil',
-  'cv.profile.text': 'Plus de 15 ans d\'experience en informatique, de l\'administration systeme au Cloud et DevOps. Premier salarie et associe de Cycloid, je porte la strategie produit et dirige une equipe de 15 personnes en full remote a travers l\'Europe. Engage pour le climat et la transmission.',
-  'cv.experience': 'Experience',
+  'cv.profile.text': 'Plus de 15 ans d\'expérience en informatique, de l\'administration système au Cloud et DevOps. CTO de Cycloid depuis sa création, je porte la stratégie produit et dirige une équipe de 15 personnes en full remote à travers l\'Europe. Engagé pour le climat et la transmission.',
+  'cv.experience': 'Expérience',
   'cv.education': 'Formation',
-  'cv.skills': 'Competences',
+  'cv.skills': 'Compétences',
   'cv.languages': 'Langues',
   'cv.certifications': 'Certifications',
   'cv.engagements': 'Engagements',
+  'cv.hobbies': 'Loisirs',
   'cv.contact': 'Contact',
 
   // Misc

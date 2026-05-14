@@ -10,26 +10,31 @@ export const skillGroups: SkillGroup[] = [
   {
     category: { fr: 'Cloud & Infrastructure', en: 'Cloud & Infrastructure' },
     icon: 'cloud',
-    skills: ['AWS', 'GCP', 'Azure', 'OpenStack', 'Terraform', 'Kubernetes', 'Docker', 'Linux', 'Nginx', 'Solaris'],
+    skills: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker', 'Linux'],
   },
   {
     category: { fr: 'DevOps & Automatisation', en: 'DevOps & Automation' },
     icon: 'cog',
-    skills: ['CI/CD', 'Ansible', 'GitHub Actions', 'GitLab CI', 'Monitoring', 'Infrastructure as Code', 'Git'],
+    skills: ['CI/CD', 'Internal Developer Portal', 'Monitoring', 'Infrastructure as Code', 'Git'],
   },
   {
-    category: { fr: 'Developpement', en: 'Development' },
+    category: { fr: 'Développement', en: 'Development' },
     icon: 'code',
-    skills: ['Python', 'Go', 'JavaScript', 'TypeScript', 'Shell/Bash', 'API REST', 'SQL'],
+    skills: ['Python', 'Go', 'TypeScript', 'Shell/Bash', 'API REST', 'SQL'],
   },
   {
-    category: { fr: 'Leadership & Strategie', en: 'Leadership & Strategy' },
+    category: { fr: 'IA & Outils', en: 'AI & Tooling' },
+    icon: 'sparkles',
+    skills: ['LLMs', 'Claude', 'Claude Code', 'Cursor', 'GitHub Copilot', 'Prompt Engineering', 'Agentic Workflows'],
+  },
+  {
+    category: { fr: 'Leadership & Stratégie', en: 'Leadership & Strategy' },
     icon: 'users',
-    skills: ['Product Management', 'Team Management', 'Remote Leadership', 'Recrutement', 'Strategie Produit'],
+    skills: ['Project / Product Management', 'Team Management', 'Remote Leadership', 'Recrutement', 'Stratégie Produit'],
   },
   {
     category: { fr: 'Langues', en: 'Languages' },
     icon: 'globe',
-    skills: ['Francais (natif)', 'English (professional)', 'Japanese (A2)'],
+    skills: ['Français (natif)', 'English (professional)', 'Japanese (A2)'],
   },
 ];

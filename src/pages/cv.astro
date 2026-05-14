@@ -10,6 +10,7 @@ const t = useTranslations(lang);
 
 const keyEngagements = engagements.filter(e =>
   e.title.fr.includes('Fresque du Climat') ||
+  e.title.fr.includes('2tonnes') ||
   e.title.fr.includes('Taekwondo') ||
   e.title.fr.includes('Boavizta')
 );
@@ -61,19 +62,32 @@ const keyEngagements = engagements.filter(e =>
     <div>
       <h2 class="cv-section-title">{t('cv.languages')}</h2>
       <div class="cv-sidebar-group">
-        <div class="cv-sidebar-item"><strong>Francais</strong> — Natif</div>
-        <div class="cv-sidebar-item"><strong>Anglais</strong> — Professionnel</div>
-        <div class="cv-sidebar-item"><strong>Japonais</strong> — A2</div>
+        <div class="cv-sidebar-item"><strong>Français</strong> (natif)</div>
+        <div class="cv-sidebar-item"><strong>Anglais</strong> (professionnel)</div>
+        <div class="cv-sidebar-item"><strong>Japonais</strong> (A2)</div>
       </div>
     </div>
 
     <div>
       <h2 class="cv-section-title">{t('cv.certifications')}</h2>
       <div class="cv-sidebar-group">
-        <div class="cv-sidebar-item">Diplome d'Assistant Club (Taekwondo)</div>
+        <div class="cv-sidebar-item">AWS Certified Solutions Architect – Associate</div>
+        <div class="cv-sidebar-item">AWS Certified SysOps Administrator – Associate</div>
+        <div class="cv-sidebar-item">Diplôme d'Assistant Club (Taekwondo)</div>
         <div class="cv-sidebar-item">Ceinture noire de Taekwondo</div>
         <div class="cv-sidebar-item">Animateur Fresque du Climat</div>
-        <div class="cv-sidebar-item">Animateur Fresque du Numerique</div>
+        <div class="cv-sidebar-item">Animateur Fresque du Numérique</div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="cv-section-title">{t('cv.hobbies')}</h2>
+      <div class="cv-skill-tags">
+        <span class="cv-skill-tag">Taekwondo</span>
+        <a class="cv-skill-tag" href="https://www.yahoki.fr">Randonnée (yahoki.fr)</a>
+        <span class="cv-skill-tag">Jeux de rôles</span>
+        <span class="cv-skill-tag">Astronomie</span>
+        <span class="cv-skill-tag">Culture japonaise</span>
       </div>
     </div>
   </aside>
@@ -121,7 +135,7 @@ const keyEngagements = engagements.filter(e =>
       <h2 class="cv-section-title">{t('cv.engagements')}</h2>
       {keyEngagements.map(eng => (
         <div class="cv-engagement-item">
-          <strong>{eng.title[lang]}</strong> — {eng.organization} ({eng.period})
+          <strong>{eng.title[lang]}</strong>, {eng.organization} ({eng.period})
         </div>
       ))}
     </section>
