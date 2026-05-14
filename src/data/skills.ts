@@ -23,6 +23,11 @@ export const skillGroups: SkillGroup[] = [
     skills: ['Python', 'Go', 'TypeScript', 'Shell/Bash', 'API REST', 'SQL'],
   },
   {
+    category: { fr: 'IA & Outils', en: 'AI & Tooling' },
+    icon: 'sparkles',
+    skills: ['LLMs', 'Claude', 'Claude Code', 'Cursor', 'GitHub Copilot', 'Prompt Engineering', 'Agentic Workflows'],
+  },
+  {
     category: { fr: 'Leadership & Stratégie', en: 'Leadership & Strategy' },
     icon: 'users',
     skills: ['Project / Product Management', 'Team Management', 'Remote Leadership', 'Recrutement', 'Stratégie Produit'],

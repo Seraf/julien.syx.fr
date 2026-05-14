@@ -16,8 +16,8 @@ export const experiences: Experience[] = [
     period: '2015 - ...',
     location: 'Full Remote, Europe',
     description: {
-      fr: 'Premier salarié et associé. Stratégie produit et direction technique d\'une plateforme interne unifiée pour les développeurs, simplifiant l\'adoption du Cloud et du DevOps.',
-      en: 'First employee and partner. Product strategy and technical leadership for a unified internal developer platform, simplifying Cloud and DevOps adoption.',
+      fr: 'CTO depuis la création de Cycloid. Stratégie produit et direction technique d\'une plateforme interne unifiée pour les développeurs, simplifiant l\'adoption du Cloud et du DevOps.',
+      en: 'CTO since Cycloid\'s founding. Product strategy and technical leadership for a unified internal developer platform, simplifying Cloud and DevOps adoption.',
     },
     highlights: {
       fr: [

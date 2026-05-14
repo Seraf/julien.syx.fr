@@ -12,7 +12,7 @@ export default {
   'hero.name': 'Julien Syx',
   'hero.title': 'CTO / Product Lead',
   'hero.subtitle': 'Cycloid',
-  'hero.description': 'Passionate about tech since age 8, first employee and partner at Cycloid since 2015. I drive product strategy and lead a 15-person team working fully remote across Europe.',
+  'hero.description': 'Passionate about tech since childhood, CTO at Cycloid since its founding in 2015. I drive product strategy and lead a 15-person team working fully remote across Europe.',
   'hero.cta.parcours': 'Discover my journey',
   'hero.cta.contact': 'Get in touch',
 
@@ -36,7 +36,7 @@ export default {
 
   'parcours.epitech.title': 'EPITECH - Learning to learn',
   'parcours.epitech.period': '2005 - 2010',
-  'parcours.epitech.text': 'Passionate about computing since age 8, choosing EPITECH was obvious after a Scientific Baccalaureate with Engineering Sciences. A school whose philosophy rests on a simple principle: learning to learn. Technology evolves too fast to rest on your laurels.',
+  'parcours.epitech.text': 'Passionate about computing since childhood, choosing EPITECH was obvious after a Scientific Baccalaureate with Engineering Sciences. A school whose philosophy rests on a simple principle: learning to learn. Technology evolves too fast to rest on your laurels.',
 
   'parcours.alternance.title': 'Work-study and the professional world',
   'parcours.alternance.period': '2007 - 2010',
@@ -52,11 +52,11 @@ export default {
 
   'parcours.redhat.title': 'Red Hat - Global scale',
   'parcours.redhat.period': '2014 - 2015',
-  'parcours.redhat.text': 'In 2014, eNovance was acquired by Red Hat. The experience of a major American corporation and open source at global scale. Their way of working didn\'t suit me.',
+  'parcours.redhat.text': 'In 2014, eNovance was acquired by Red Hat. The experience of a major American corporation and open source at global scale. It didn\'t suit me: I prefer human-scale companies that foster autonomy and the freedom to build, rather than the hierarchy of a sprawling corporation.',
 
   'parcours.cycloid.title': 'Cycloid - Building a product',
   'parcours.cycloid.period': '2015 - Present',
-  'parcours.cycloid.text': 'In 2015, I joined Cycloid as first employee and partner. As CTO, I built the engineering team and drove product strategy. The company chose to be fully remote from the start, recruiting across Europe with English as the working language. Today, I manage a team of 15. In 2019, a fundraise of over 3 million euros. In 2025, a second round of the same amount.',
+  'parcours.cycloid.text': 'In 2015, I joined Cycloid at its founding as CTO. I built the engineering team and drove product strategy. The company chose to be fully remote from the start, recruiting across Europe with English as the working language. Today, I manage a team of 15. In 2019, a fundraise of over 3 million euros. In 2025, a second round of the same amount.',
 
   'parcours.covid.title': 'Covid - A turning point',
   'parcours.covid.period': '2020',
@@ -64,7 +64,7 @@ export default {
 
   'parcours.sport.title': 'Back to sports and teaching',
   'parcours.sport.period': '2021 - Present',
-  'parcours.sport.text': 'After Covid, back to sports with taekwondo. Since then: black belt, 25 kg lost, club assistant certification, and involvement as secretary of the club (~250 members). I assist the instructor and occasionally lead classes. It\'s within this club that I discovered the joy of sharing and teaching.',
+  'parcours.sport.text': 'After Covid, back to sports with taekwondo. Since then: black belt, 25 kg lost, club assistant certification, and involvement as secretary of the club (~250 members). I assist the instructor and occasionally lead classes. It\'s within this club that I discovered the joy of sharing and teaching, but also the human body, its muscles, its joints, and its power to heal through movement.',
 
   'parcours.apprendre.title': 'Never stop learning',
   'parcours.apprendre.period': 'Always',
@@ -106,7 +106,7 @@ export default {
 
   // CV
   'cv.profile': 'Profile',
-  'cv.profile.text': 'Over 15 years of experience in IT, from system administration to Cloud and DevOps. First employee and partner at Cycloid, driving product strategy and leading a 15-person team fully remote across Europe. Committed to climate action and knowledge sharing.',
+  'cv.profile.text': 'Over 15 years of experience in IT, from system administration to Cloud and DevOps. CTO at Cycloid since its founding, driving product strategy and leading a 15-person team fully remote across Europe. Committed to climate action and knowledge sharing.',
   'cv.experience': 'Experience',
   'cv.education': 'Education',
   'cv.skills': 'Skills',
