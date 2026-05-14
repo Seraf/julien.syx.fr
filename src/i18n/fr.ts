@@ -2,8 +2,8 @@ export default {
   // Nav
   'nav.home': 'Accueil',
   'nav.parcours': 'Parcours',
-  'nav.experience': 'Experience',
-  'nav.realisations': 'Realisations',
+  'nav.experience': 'Expérience',
+  'nav.realisations': 'Réalisations',
   'nav.engagements': 'Engagements',
   'nav.contact': 'Contact',
 
@@ -106,10 +106,10 @@ export default {
 
   // CV
   'cv.profile': 'Profil',
-  'cv.profile.text': 'Plus de 15 ans d\'experience en informatique, de l\'administration systeme au Cloud et DevOps. Premier salarie et associe de Cycloid, je porte la strategie produit et dirige une equipe de 15 personnes en full remote a travers l\'Europe. Engage pour le climat et la transmission.',
-  'cv.experience': 'Experience',
+  'cv.profile.text': 'Plus de 15 ans d\'expérience en informatique, de l\'administration système au Cloud et DevOps. Premier salarié et associé de Cycloid, je porte la stratégie produit et dirige une équipe de 15 personnes en full remote à travers l\'Europe. Engagé pour le climat et la transmission.',
+  'cv.experience': 'Expérience',
   'cv.education': 'Formation',
-  'cv.skills': 'Competences',
+  'cv.skills': 'Compétences',
   'cv.languages': 'Langues',
   'cv.certifications': 'Certifications',
   'cv.engagements': 'Engagements',
