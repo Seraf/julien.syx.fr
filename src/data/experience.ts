@@ -65,12 +65,10 @@ export const experiences: Experience[] = [
       fr: [
         'Écosystème OpenStack et cloud computing',
         'Pratiques DevOps avancées',
-        'Télétravail partiel',
       ],
       en: [
         'OpenStack ecosystem and cloud computing',
         'Advanced DevOps practices',
-        'Partial remote work',
       ],
     },
   },
@@ -79,10 +77,13 @@ export const experiences: Experience[] = [
     role: { fr: 'Ingénieur Système N2', en: 'System Engineer - Level 2' },
     period: '2012',
     description: {
-      fr: 'Administration système et gestion d\'infrastructure.',
-      en: 'System administration and infrastructure management.',
+      fr: 'Administration système et gestion d\'infrastructure. Gestion des sites internet de Warner Bros.',
+      en: 'System administration and infrastructure management. Managed Warner Bros websites.',
     },
-    highlights: { fr: [], en: [] },
+    highlights: {
+      fr: ['Gestion des sites internet de Warner Bros'],
+      en: ['Managed Warner Bros websites'],
+    },
   },
   {
     company: 'Stockho SI',

@@ -10,22 +10,22 @@ export const skillGroups: SkillGroup[] = [
   {
     category: { fr: 'Cloud & Infrastructure', en: 'Cloud & Infrastructure' },
     icon: 'cloud',
-    skills: ['AWS', 'GCP', 'Azure', 'OpenStack', 'Terraform', 'Kubernetes', 'Docker', 'Linux', 'Nginx', 'Solaris'],
+    skills: ['AWS', 'GCP', 'Azure', 'Terraform', 'Kubernetes', 'Docker', 'Linux'],
   },
   {
     category: { fr: 'DevOps & Automatisation', en: 'DevOps & Automation' },
     icon: 'cog',
-    skills: ['CI/CD', 'Ansible', 'GitHub Actions', 'GitLab CI', 'Monitoring', 'Infrastructure as Code', 'Git'],
+    skills: ['CI/CD', 'Internal Developer Portal', 'Monitoring', 'Infrastructure as Code', 'Git'],
   },
   {
     category: { fr: 'Développement', en: 'Development' },
     icon: 'code',
-    skills: ['Python', 'Go', 'JavaScript', 'TypeScript', 'Shell/Bash', 'API REST', 'SQL'],
+    skills: ['Python', 'Go', 'TypeScript', 'Shell/Bash', 'API REST', 'SQL'],
   },
   {
     category: { fr: 'Leadership & Stratégie', en: 'Leadership & Strategy' },
     icon: 'users',
-    skills: ['Product Management', 'Team Management', 'Remote Leadership', 'Recrutement', 'Stratégie Produit'],
+    skills: ['Project / Product Management', 'Team Management', 'Remote Leadership', 'Recrutement', 'Stratégie Produit'],
   },
   {
     category: { fr: 'Langues', en: 'Languages' },

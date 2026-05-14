@@ -113,6 +113,7 @@ export default {
   'cv.languages': 'Languages',
   'cv.certifications': 'Certifications',
   'cv.engagements': 'Commitments',
+  'cv.hobbies': 'Hobbies',
   'cv.contact': 'Contact',
 
   // Misc
